@@ -280,7 +280,7 @@ display: block;
       &_icon {
          position: relative;
          z-index: 5;
-      background: url('./img/icons/header/header_icon0.png')left no-repeat;
+      background: url('../img/icons/header/header_icon0.png')left no-repeat;
       padding: 0px 0px 0px 37px;
       @media(max-width: $md1+px) {
          padding: 0px 0px 0px 25px;
@@ -319,7 +319,7 @@ display: block;
          font-size: 16px;
       }
       @media(max-width: $md3+px){
-         background: url('./img/icons/header/header_icon0.png')left no-repeat;
+         background: url('../img/icons/header/header_icon0.png')left no-repeat;
          width: 19px;
          height: 25px;
          font-size: 0;
@@ -388,15 +388,15 @@ margin: 0px 0px 15px 0px;
          }
 
 			&_login {
-            background: url('/img/icons/header/header_icon01.png') left no-repeat;
+            background: url('../img/icons/header/header_icon01.png') left no-repeat;
 			}
 
 			&_reg {
-            background: url('/img/icons/header/header_icon02.png') left no-repeat;
+            background: url('../img/icons/header/header_icon02.png') left no-repeat;
 			}
 
 			&_mail {
-            background: url('/img/icons/header/header_icon03.png') left no-repeat;
+            background: url('../img/icons/header/header_icon03.png') left no-repeat;
             span {
                border-bottom: 1px solid;
             }
@@ -433,7 +433,7 @@ margin: 0px 0px 15px 0px;
    }
 
    &__callback {
-      background: url('/img/icons/header/header_icon04.png') left no-repeat;
+      background: url('../img/icons/header/header_icon04.png') left no-repeat;
       display: inline-block;
       line-height: 20px;
       color: #1ab9ce;
@@ -446,7 +446,7 @@ margin: 0px 0px 15px 0px;
    }
 
    &__schedule {
-      background: url('/img/icons/header/header_icon05.png') left no-repeat;
+      background: url('../img/icons/header/header_icon05.png') left no-repeat;
       display: inline-block;
       line-height: 18px;
       color: #999999;
@@ -470,7 +470,7 @@ margin: 0px 0px 15px 0px;
       width: 43px;
       height: 43px;
       display: inline-block;
-      background: url('/img/icons/header/header_korzina.png') 0 0 no-repeat;
+      background: url('../img/icons/header/header_korzina.png') 0 0 no-repeat;
       position: relative;
 
       span {
