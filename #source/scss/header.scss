@@ -2,7 +2,7 @@
 
 .header {
    //залили белым шапку вокруг
-   background: #fff url("/img/header_bg.png") top no-repeat;
+   background: #fff url("../img/header_bg.png") top no-repeat;
  position: fixed;
    left: 0;
    top: 0;
@@ -26,7 +26,7 @@ z-index: 5;
    //коректировка голубого фона 
    @media(max-width: $md3+px) {
          //залили белым шапку  вокруг
-      background: #fff url("/img/header_bg.png") 0 -20px no-repeat; // подняли вверх картинку
+      background: #fff url("../img/header_bg.png") 0 -20px no-repeat; // подняли вверх картинку
    }
 
 }

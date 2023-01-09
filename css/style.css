@@ -855,7 +855,7 @@ h6 {
 }
 
 .header {
-  background: #fff url("/img/header_bg.png") top no-repeat;
+  background: #fff url("../img/header_bg.png") top no-repeat;
   position: fixed;
   left: 0;
   top: 0;
@@ -878,7 +878,7 @@ h6 {
 }
 @media (max-width: 767.98px) {
   .header {
-    background: #fff url("/img/header_bg.png") 0 -20px no-repeat;
+    background: #fff url("../img/header_bg.png") 0 -20px no-repeat;
   }
 }
 
