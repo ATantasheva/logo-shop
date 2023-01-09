@@ -1,0 +1,711 @@
+//<МИКСИНЫ>===============================================================================================
+@mixin anim($time, $delay) {
+   -webkit-transition: all $time ease $delay;
+   -moz-transition: all $time ease $delay;
+   -ms-transition: all $time ease $delay;
+   -o-transition: all $time ease $delay;
+   transition: all $time ease $delay;
+}
+
+@mixin anim_cubic($time, $delay) {
+   -webkit-transition: all $time cubic-bezier(0.68, -0.55, 0.265, 1.55) $delay;
+   -moz-transition: all $time cubic-bezier(0.68, -0.55, 0.265, 1.55) $delay;
+   -ms-transition: all $time cubic-bezier(0.68, -0.55, 0.265, 1.55) $delay;
+   -o-transition: all $time cubic-bezier(0.68, -0.55, 0.265, 1.55) $delay;
+   transition: all $time cubic-bezier(0.68, -0.55, 0.265, 1.55) $delay;
+}
+
+@mixin rotate($deg) {
+   -moz-transform: rotate($deg);
+   -ms-transform: rotate($deg);
+   -webkit-transform: rotate($deg);
+   -o-transform: rotate($deg);
+   transform: rotate($deg);
+}
+
+@mixin scale($num) {
+   -moz-transform: scale($num);
+   -ms-transform: scale($num);
+   -webkit-transform: scale($num);
+   -o-transform: scale($num);
+   transform: scale($num);
+}
+
+@mixin skew($num) {
+   -webkit-transform: skewX($num);
+   -moz-transform: skewX($num);
+   -ms-transform: skewX($num);
+   -o-transform: skewX($num);
+   transform: skewX($num);
+}
+
+@mixin cnt($h) {
+   display: flex;
+   flex-direction: column;
+   height: $h;
+   text-align: center;
+   align-items: stretch;
+   justify-content: center;
+}
+
+@mixin tr($x, $y, $z) {
+   transform: translate3d($x, $y, $z);
+}
+
+;
+
+@mixin flexbox() {
+   display: -webkit-box;
+   display: -moz-box;
+   display: -ms-flexbox;
+   display: -webkit-flex;
+   display: flex;
+   font-size: 0;
+}
+
+@mixin flexorder($val) {
+   -webkit-box-ordinal-group: $val;
+   -moz-box-ordinal-group: $val;
+   -ms-flex-order: $val;
+   -webkit-order: $val;
+   order: $val;
+}
+
+//</МИКСИНЫ>===============================================================================================
+
+//<ШРИФТЫ>===============================================================================================
+//для кириллицы нужно добавить в конец подключенного шрифта
+//&display=swap&subset=cyrillic-ext
+//<Подключаем шрифты>=======================================================================================
+//поставить кавычки в скобки
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,regular,500,700,900&display=swap&subset=cyrillic-ext");
+@import url("https://fonts.googleapis.com/css?family=Play:700&display=swap&subset=cyrillic-ext");
+
+//</Подключаем шрифты>=======================================================================================
+@font-face {
+	font-family: 'UniSans';
+	src: url('../fonts/UniSansHeavyCAPS.eot');
+	src: local('☺'), url('../fonts/UniSansHeavyCAPS.woff') format('woff'), url('../fonts/UniSansHeavyCAPS.ttf') format('truetype');
+	font-weight: 900;
+   font-style: normal;
+}
+//<Шрифт по умолчанию>==========================================================================================
+$fontfamily: "Roboto";
+//</Шрифт по умолчанию>==========================================================================================
+
+//</ШРИФТЫ>==============================================================================================================
+
+
+//<ПЕРЕМЕННЫЕ>=====СЕТКА АДАПТИВА ======================================================================================================
+$minwidth: 320px;
+$mwidth: 1440px; //ширина всего полотна макета от дизайнера
+$mw: 1180; //ширина контейнера ВСЕГДА!! - добавила отступы без-ти
+// на основании нее остальные брейкпойнты
+$md1: $mw+12;
+$md2: 991.98; //планшет
+$md3: 767.98; //бол смартфон
+$md4: 479.98; //мал смартфон
+
+
+//</ПЕРЕМЕННЫЕ>==============================================================================================================
+
+//<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+//подкл обнуляющий файл
+@import "null";
+
+
+//</ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>===============================================================================================
+
+//<ОБОЛОЧКА>===========================================================================================================
+.wrapper {
+   width: 100%;
+   min-height: 100%;
+   overflow: hidden;
+   display: flex;
+   flex-direction: column;
+
+   &.loaded {}
+}
+
+//</ОБОЛОЧКА>===========================================================================================================
+
+//<ОСНОВНАЯ СЕТКА>===========================================================================================================
+.container {
+   max-width: $mw+px;
+   margin: 0 auto;
+   width: 100%;
+   padding: 0px 20px; //отступы без-ти
+   @media(max-width: $md3+px){
+      padding: 0px 10px;
+   }
+   //убрала брейкпоинты тк будет отзывчивая верстка
+/*
+   @media (max-width:$md1+px) {
+      max-width: 970px;
+   }
+
+   @media (max-width:$md2+px) {
+      max-width: 750px;
+   }
+
+   @media (max-width:$md3+px) {
+      max-width: none;
+      padding: 0 10px;
+   } */
+}
+
+//</ОСНОВНАЯ СЕТКА>===========================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+@import "baguetteBox.scss";
+@import "popover.min.scss";
+@import "popup.scss";
+@import "header.scss";
+@import "footer.scss";
+//</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
+
+//<ОСНОВНОЙ БЛОК>====================================================================================================
+
+
+//БЛОК aside
+
+.page {
+flex: 1 1 auto;
+padding: 160px 0px 0px 0px;
+   &__container {
+      display: flex;
+   }
+   &__side {
+      flex: 0 0 260px;
+    //  position: relative;
+   }
+   &__menu {
+   }
+   &__content {
+      flex: 1 1 auto;
+      padding: 0px 0px 0px 30px;
+      //max-width: 0; для слайдера тк это флекс элемент
+   }
+}
+
+.menu-page {
+   background: url('/img/bg__aside_menu.png') top repeat;
+position: relative; //суб-меню при ховере относительно всего меню-сайдбар
+   &__header {
+      padding: 20px;
+      display: flex;
+      align-items: center;
+   }
+   &__title {
+      font-family: 'UniSans';
+font-size: 30px;
+line-height: 120%;
+font-weight: 900;
+text-transform: uppercase;
+letter-spacing: 0.025em;
+color: #ffffff;
+   }
+   &__burger {
+      /* поскольку бургер -флекс-эл ему надо указать ширину через флекс */
+      flex: 0 0 36px;
+      width: 36px;
+height: 36px;
+background-color: #068292;
+position: relative;
+		cursor: pointer;
+		z-index: 1;
+      padding: 10px 6px;
+   //  position: relative;
+		span {
+        transition: all 0.3s ease 0s;
+         top: 8px;
+         left: 0px;
+         position: absolute;
+         width: 100%;
+         height: 2px;
+         background-color: #fff;
+			&:first-child {
+            top: 0px;
+         }
+			&:last-child {
+            top: auto;
+            bottom: 0px;
+         }
+		}
+		&._active{
+			span {
+            transform: scale(0);
+				&:first-child {
+               transform: rotate(-45deg);
+               top: 8px;
+            }
+				&:last-child {
+               transform: rotate(45deg);
+               bottom: 8px;
+            }
+			}
+		}
+   }
+   &__lines {
+      height: 18px;
+      position: relative;
+            }
+         
+   &__body {
+  display: none;
+  transition: all 1s ease-in-out;
+      &._active{
+        display: block;
+         
+      }
+   } 
+
+   &__list {
+   }
+      .menu-page {
+         &__parent {
+            &::after {
+               content: "";
+               position: absolute;
+               right: 10px;
+               //top: 50%;
+               transform: translate(0px, -200%); //коряво подбирала
+               width: 14px;
+               height: 14px;
+               background: url('/img/icons/main/arrou__sidebar.png');
+            }
+            &._active {
+               .submenu-page__item {
+                  z-index: 2; //увеличив для аквтиного объекта
+   transform: translate(0px, 0px);
+               }
+            }
+         }
+      }
+         
+   &__link {
+      font-size: 12px;
+      line-height: 333%;
+      font-weight: 300;
+      letter-spacing: 0.025em;
+      color: #ffffff;
+      display: block;
+      padding: 0px 20px 0px 20px;
+      border-bottom: 1px solid #1aa7b9;
+ position: relative;
+      @media(min-width: $md2+px){
+         &:hover {
+            background-color: #098494;
+         }
+      }
+   }
+//=============================================================================   
+//выпадающие карточик меню при ховере
+
+   &__submenu {
+      width: 100%;
+position: absolute;
+top: 0;
+left: 100%;
+height: 100%;
+overflow: hidden;//скрываем выезжающее сабменю
+   }
+
+.submenu-page {
+&__item{
+   width: 280px;
+   border: 2px solid #098494;
+   background: #fff;
+position: absolute;
+left: 0%;
+transform: translate(-100%,0px); //изначально 0 чтобы выезжало
+top: 0;
+width: 100%;
+height: 100%;
+transition: all 0.3s ease 0s;
+}
+   &__product {
+   }
+   &__menu {
+      border-bottom: 1px solid #dedede;
+padding: 20px 0;
+   }
+   &__link {
+      display: block; //тк ссылка
+ font-size: 12px;
+ font-weight: 300;
+ letter-spacing: 0.025em;
+ color: #1ab9ce;
+ padding: 10px 40px;
+@media(min-width: $md2+px){
+&:hover {
+   color: #fff;
+   background-color: #71c7d3;
+
+}
+}
+ }
+   }
+
+.item-product {
+padding: 15px 0px;
+//position: relative;
+   &__labels {
+      //position: absolute;
+     padding: 0px 0px 0px 15px;
+   }
+
+   &__label { //если будет много то в колонну
+      margin: 0px 0px 5px 0px;
+      display: inline-block;
+font-size: 14px;
+line-height: 24px;
+font-weight: 900;
+text-transform: uppercase;
+color: #ffffff;
+background-color: #fd8424;
+height: 21px;
+padding: 0px 15px;
+border-radius: 15px;
+   }
+   &__body {
+padding: 0px 25px;
+
+   }
+   &__image {
+      height: 195px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 0px;
+      img {
+         max-width: 100%;
+         min-height: 175px;
+      }
+   }
+
+   &__title {
+      font-size: 16px;
+line-height: 24px;
+font-weight: 300;
+color: #36949f;
+display: inline-block;
+margin: 0px 0px 5px 0px;
+&:hover {
+   text-decoration: underline;
+}
+   }
+
+   &__footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+   }
+
+   &__old-price {
+      display: none;
+      flex: 1 1 100%;
+      text-align: right;
+      font-size: 18px;
+line-height: 24px;
+font-weight: 300;
+text-decoration: line-through;
+color: #999999;
+&:after {
+   font-size: 15px;
+   content: "";
+}
+   }
+
+   &__bottom {
+      
+      }
+
+   &__add {
+      width: 40px;
+      height: 40px;
+      background: url('/img/products/cart.png') 0 0 no-repeat;
+   }
+
+   &__price {
+      font-size: 24px;
+line-height: 100%;
+font-weight: 900;
+color: #333333;
+&:after {
+   font-size: 18px;
+}
+   }
+}
+}
+//============================================================================
+//поле поиска
+
+.page {
+
+   &__search {
+      margin: 0px 0px 22px 0px;
+   }
+}
+
+.search-page {
+display: flex;
+position: relative;
+   &__select {
+      display: flex;
+      align-items: center;
+      background-color: #f3f3f3;
+      padding: 0px 14px;
+      cursor: pointer;
+
+
+      }
+     
+   
+
+   &__title {
+      display: flex;
+      align-items: center;
+      background-color: #f3f3f3;
+      font-size: 14px;
+line-height: 1.2;
+font-weight: 300;
+color: #666666;
+> span {
+   margin: 0px 13px;
+   border-bottom: 1px dashed #666666;
+   &:last-child {
+      display: none; //второй спан изначально скрыт
+   }
+}
+&::before {
+   content: '';
+   background: url('/img/icons/main/search_page.png')0 0 no-repeat;
+   width: 17px;
+height: 17px;
+}
+&::after {
+   content: '';
+   background: url('/img/icons/main/arrow_page.png')0 0 no-repeat;
+   width: 10px;
+height: 10px;
+transition: all 0.3s ease 0s;
+}
+&._categories {
+   span {
+      display: none;
+   }
+  .change {
+      display: block;
+
+}
+}
+&._active {
+   &::after {
+      transform: rotate(-180deg);
+   }
+}
+   }
+
+   &__categories {
+      position: absolute;
+      left: 0;
+      top: 100%; //чтобы спустилось ниже поля
+      width: 100%;
+   }
+
+		&__input {
+         flex: 1 1 auto; // чтобы расталкивал элементы друг максимально
+		.input {
+         height: 100%;
+      }
+      }
+
+
+
+   &__btn {
+   }
+}
+.title-search {
+}
+.categories-search {
+background-color: #fff;
+border: 1px solid #f3f3f3;
+border-bottom: 4px solid #f68038;
+display: none; //изначально скрыто
+ //position: relative;
+      z-index:4; //чтобы был над слайдером
+&._active {
+   display: block;
+}
+   &__row {
+      display: flex;
+     
+   }
+
+   &__column {
+      flex: 0 1 33.333%;
+      padding: 27px 40px;
+      border-right: 1px solid #f3f3f3;
+      &:last-child {
+         border: 0;
+      }
+   }
+
+   &__list {
+     li {
+      margin: 0px 0px 20px 0px;
+      font-size: 12px;
+      font-weight: 300;
+      color: #999999;
+      &:last-child{
+         margin: 0px 0px 0px 0px;
+      }
+     }
+   }
+ 
+   &__checkbox {
+      .checkbox__input {
+         display: none;
+         &:checked + .checkbox__text{ //выбирая элемент он будет оранжевым
+          color: #f68038;
+         }
+      }
+  .checkbox__text {
+   color: #999;
+   &:before {
+   display: none;
+   }
+  }
+
+   }
+
+}
+//============================================================================================================
+//Слайдер
+
+.page {
+
+   &__slider {
+      margin: 0px 0px 56px 0px;
+   }
+}
+.mainslider {
+
+   &__body {
+   }
+
+   &__slide {
+      position: relative;
+   }
+
+   &__content {
+      position: relative;
+      z-index:2;
+      min-height: 100px;
+   }
+
+   &__image img {
+      position: absolute;
+      left: 0;
+      top: 0;
+        width: 100%;
+        height: 100%;
+         object-fit: cover;
+   }
+   &__dots {
+   }
+}
+// раб класс
+
+
+
+
+.content-mainslider {
+padding: 20px 35px;
+   &__title {
+      font-size: 48px;
+      line-height: 43px;
+      text-transform: uppercase;
+      font-weight: 900;
+      margin: 0px 0px 50px 0px;
+      span {
+         color: #f68038;
+         display: block
+      }
+   }
+
+   &__text {
+   }
+
+   &__footer {
+      padding: 15px 0px 0px 0px;
+   text-align: center;
+   }
+
+   &__price {
+      margin-bottom: 24px;
+      font-size: 36px;
+      color: #fff;
+      line-height: 24px;
+      font-weight: 900;
+      &::after {
+         content:'';
+         font-size: 30px;
+         margin: 0px 0px 0px 10px;
+      }
+   }
+
+   &__button {
+      height: 33px;
+      border: 3px solid #fff;
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 15px;
+      padding: 0px 20px;
+  
+      background: url('/img/icons/main/slider-arrow.png') 90% 40% no-repeat;
+      background-size: 35px;
+      align-items: center;
+      span {
+font-size: 14px;
+color: #fff;
+text-transform: uppercase;
+padding: 0px 30px 0px 0px;
+
+      }
+   }
+}
+.text-mainslider {
+color: #333;
+font-size: 18px;
+font-weight: 900;
+line-height: 24px;
+   &__text-1 {
+      color: #f68038;
+   }
+   &__text-2 {
+      color: #fff;
+      background-color: #92918e;
+     
+display: inline-block;
+      align-items: center;
+      padding: 5px 10px;
+   }
+   &__text-3 {
+      color: #979797;
+   }
+}
+
+
+
+//===================================================================================================================
+
+//</ОСНОВНОЙ БЛОК>====================================================================================================
+
+//<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
+@import "forms.scss"; //кнопки чекбоксы поля
+@import "ui.scss"; // сборка одинаковых классов вписываем сюда!}

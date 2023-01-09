@@ -1,0 +1,10 @@
+
+в index.kit  ссылка    <!-- @import "js.html" -->
+
+в js.html убираем jquery (комментируем)
+
+оставляем main.js custom.js
+потому что все файлы кроме main.js custom.js относятся к jquery
+
+
+
