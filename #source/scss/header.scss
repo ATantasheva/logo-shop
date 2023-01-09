@@ -280,7 +280,7 @@ display: block;
       &_icon {
          position: relative;
          z-index: 5;
-      background: url('/img/icons/header/header_icon0.png')left no-repeat;
+      background: url('./img/icons/header/header_icon0.png')left no-repeat;
       padding: 0px 0px 0px 37px;
       @media(max-width: $md1+px) {
          padding: 0px 0px 0px 25px;
@@ -319,7 +319,7 @@ display: block;
          font-size: 16px;
       }
       @media(max-width: $md3+px){
-         background: url('/img/icons/header/header_icon0.png')left no-repeat;
+         background: url('./img/icons/header/header_icon0.png')left no-repeat;
          width: 19px;
          height: 25px;
          font-size: 0;
