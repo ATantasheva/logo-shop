@@ -17,6 +17,25 @@ submenuItems[submenuNumber].classList.add('_active');
    });
 }
 */
+
+//проверяем если это на мобилках 
+if (isMobile.any()) {
+   const menuParents = document.querySelectorAll('.menu-page__parent>a');
+// циклом бежим по всем из menuParents
+for(let index=0; index < menuParents.length; index++) {
+   //созд конст menuParent с ключем
+   const menuParent = menuParents[index];
+   menuParent.addEventListener('click', function(e) {
+     
+      menuParent.parentElement.classList.toggle('_active');
+     
+//отменяем нажатие и проход по ссылке
+e.preventDefault();
+   })
+}
+
+} else { // это на ПК
+
 //анимация субменю при наведении
 //обращаемся к ли которые с модификатором парент
 const menuParents = document.querySelectorAll('.menu-page__parent');
@@ -32,6 +51,7 @@ menuParent.classList.add('_active');
    menuParent.addEventListener('mouseleave', function(e) {
       menuParent.classList.remove('_active');
    });
+}
 }
 //==================================================================================
 //делаем бургер на сайдбар

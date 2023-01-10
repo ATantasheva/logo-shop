@@ -172,9 +172,18 @@ $md4: 479.98; //мал смартфон
 .page {
 flex: 1 1 auto;
 padding: 160px 0px 0px 0px;
+@media(max-width: $md3+px){
+padding: 133px 0px 0px 0px;
+}
+@media(max-width: 640px){
+   padding: 85px 0px 0px 0px;
+   }
 
    &__container {
-      display: flex;
+  
+      @media(min-width: $md2+px){ //мобайл ферст
+         display: flex;
+      }
   
    }
    &__side {
@@ -184,21 +193,29 @@ padding: 160px 0px 0px 0px;
    &__menu {
    }
    &__content {
-      flex: 1 1 auto;
-      padding: 0px 0px 0px 30px;
-      min-width: 0; //флекс элементу обязательно для слайдера
+      @media(min-width: $md2+px){
+         flex: 1 1 auto;
+         padding: 0px 0px 0px 30px;
+         min-width: 0; //флекс элементу обязательно для слайдера
+      }
    }
 }
 
 .menu-page {
    background: url('../img/bg__aside_menu.png') top repeat;
 position: relative; //суб-меню при ховере относительно всего меню-сайдбар
+margin-bottom: 10px;
+@media(max-width: 640px){
+   z-index: 3;
+}
    &__header {
       padding: 20px;
       display: flex;
       align-items: center;
+      
    }
    &__title {
+      flex: 1 1 auto;
       font-family: 'UniSans';
 font-size: 30px;
 line-height: 120%;
@@ -277,9 +294,17 @@ position: relative;
                background: url('../img/icons/main/arrou__sidebar.png');
             }
             &._active {
+               .menu-page__submenu {
+
+                     pointer-events: all;
+                 //чтобы на актив при ховере в нужно месте выезжала карточка
+               }
                .submenu-page__item {
-                  z-index: 2; //увеличив для аквтиного объекта
-   transform: translate(0px, 0px);
+                  display: block;
+   @media(min-width: $md2+px){
+      z-index: 2; //увеличив для аквтиного объекта
+      transform: translate(0px, 0px);
+   }
                }
             }
          }
@@ -300,22 +325,35 @@ position: relative;
             background-color: #098494;
          }
       }
+      @media(max-width: $md2+px) {
+         font-size: 20px;
+      }
    }
 //=============================================================================   
 //выпадающие карточик меню при ховере
 
    &__submenu {
-      width: 100%;
-position: absolute;
-top: 0;
-left: 100%;
-height: 100%;
-overflow: hidden;//скрываем выезжающее сабменю
-z-index: 4;
+
+@media(min-width: $md2+px){
+   width: 100%;
+   position: absolute;
+   top: 0;
+   left: 100%;
+   height: 100%;
+   overflow: hidden;//скрываем выезжающее сабменю
+   z-index: 4;
+   pointer-events: none; //чтобы без актив при ховере карточка не выезжала
+}
    }
 
 .submenu-page {
+   @media(max-width: $md2+px){
+      background: #fff;
+   }
 &__item{
+   display: none;
+@media(min-width: $md2+px){
+   display: block;
    width: 280px;
    border: 2px solid #098494;
    background: #fff;
@@ -327,7 +365,11 @@ width: 100%;
 height: 100%;
 transition: all 0.3s ease 0s;
 }
+}
    &__product {
+      @media(max-width: $md2+px){
+         display: none;
+      }
    }
    &__menu {
       border-bottom: 1px solid #dedede;
@@ -344,14 +386,18 @@ padding: 20px 0;
 &:hover {
    color: #fff;
    background-color: #71c7d3;
-
 }
+}
+@media(max-width: $md2+px) {
+   font-size: 18px;
+   padding: 6px 20px;
 }
  }
    }
 
 .item-product {
 padding: 15px 0px;
+
 //position: relative;
    &__labels {
       //position: absolute;
