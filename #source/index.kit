@@ -6,10 +6,13 @@
    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
    <meta name="format-detection" content="telephone=no">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+         <!-- Подключаем CSS слайдера 
+         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+         -->
+         <link rel="stylesheet" href="css/swiper-bundle.min.css">
    <link rel="stylesheet" href="css/style.css">
    <link rel="stylesheet" href="css/custom.css">
-   <!-- Подключаем CSS слайдера -->
-<link rel="stylesheet" href="css/simple-adaptive-slider.css">
+
    <link rel="shortcut icon" href="favicon.ico"> <!--иконка в браузере-->
    <!-- <meta name="robots" content="noindex, nofollow" /> -->
    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
@@ -336,35 +339,53 @@
 <button type="submit" class="search-page__btn btn">Найти</button>
    </form>
    <div class="page__slider mainslider itcss">
-           <!--тело слайдера-->
-      <div class="mainslider__body _swiper itcss__wrapper">
-         <div class="mainslider__slide itcss__items">
-
- <!-- Контент 1 слайда -->
-            <div class="mainslider__image itcss__item">
-               <div class="mainslider__content content-mainslider">
-                  <div class="content-mainslider__title"><span>Мега </span>распродажа</div>
-                  <div class="content-mainslider__text text-mainslider">
-                     <p><span class="text-mainslider__text-1">Успей купить</span> тренажеры</p>
-                     <p> <span class="text-mainslider__text-2">по старой цене</span> </p>
-                    <p>  до их <span class="text-mainslider__text-3">повышения</span></p>
-                      </div>
-                  <div class="content-mainslider__footer">
-                  <div class="content-mainslider__price rub"> от 45 000</div>
-                  <a href="#" class="content-mainslider__button"> <span>Подробнее</span> </a>
-               </div>
-               </div>
-               <img src="./img/slider01.jpeg" alt="беговая дорожка">
-            </div>
-             <!-- Контент 2 слайда -->
-             <div class="mainslider__image itcss__item">
-             
-               <img src="./img/slider01.jpeg" alt="беговая дорожка">
-            </div>
+           
+           <div class="mainslider__content content-mainslider">
+            <div class="content-mainslider__title"><span>Мега </span>распродажа</div>
+            <div class="content-mainslider__text text-mainslider">
+               <p><span class="text-mainslider__text-1">Успей купить</span> тренажеры</p>
+               <p> <span class="text-mainslider__text-2">по старой цене</span> </p>
+              <p>  до их <span class="text-mainslider__text-3">повышения</span></p>
+                </div>
+            <div class="content-mainslider__footer">
+            <div class="content-mainslider__price rub"> от 45 000</div>
+            <a href="#" class="content-mainslider__button"> <span>Подробнее</span> </a>
          </div>
+         </div>
+         <!--тело слайдера-->
+      <div class="mainslider__body image-slider swiper-container">
+         <div class="mainslider__slide itcss__items image-slider__wrapper swiper-wrapper">
+           
+               <div class="mainslider__image itcss__item image-slider__slide swiper-slide">
+                  <div class="image-slider__image">
+                  <img src="./img/slider01.jpeg" alt="беговая дорожка">
+               </div>
+      
       </div>
+            
+         <div class="mainslider__image itcss__item image-slider__slide swiper-slide">
+            <div class="image-slider__image">
+              <img src="/img/slide02.jpeg" alt="беговая дорожка">
+           </div>
+        </div>
+        <div class="mainslider__image itcss__item image-slider__slide swiper-slide">
+         <div class="image-slider__image">
+           <img src="/img/slide03.jpeg" alt="беговая дорожка">
+        </div>
+     </div>
+     <div class="mainslider__image itcss__item image-slider__slide swiper-slide">
+      <div class="image-slider__image">
+        <img src="/img/slide04.jpeg" alt="беговая дорожка">
+     </div>
+  </div>
+  <div class="mainslider__image itcss__item image-slider__slide swiper-slide">
+   <div class="image-slider__image">
+     <img src="/img/slide05.jpeg" alt="беговая дорожка">
+  </div>
+</div>
+</div>
       <!--для навигации-->
-      <div class="mainslider__dots"></div>
+      <div class="mainslider__dotts swiper-pagination"></div>
    </div>
 </div>
 </div>

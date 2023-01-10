@@ -157,9 +157,9 @@ $md4: 479.98; //мал смартфон
 //</ОСНОВНАЯ СЕТКА>===========================================================================================================
 
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
-@import "baguetteBox.scss";
-@import "popover.min.scss";
-@import "popup.scss";
+//@import "baguetteBox.scss";
+//@import "popover.min.scss";
+//@import "popup.scss";
 @import "header.scss";
 @import "footer.scss";
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
@@ -172,8 +172,10 @@ $md4: 479.98; //мал смартфон
 .page {
 flex: 1 1 auto;
 padding: 160px 0px 0px 0px;
+
    &__container {
       display: flex;
+  
    }
    &__side {
       flex: 0 0 260px;
@@ -184,7 +186,7 @@ padding: 160px 0px 0px 0px;
    &__content {
       flex: 1 1 auto;
       padding: 0px 0px 0px 30px;
-      //max-width: 0; для слайдера тк это флекс элемент
+      min-width: 0; //флекс элементу обязательно для слайдера
    }
 }
 
@@ -309,6 +311,7 @@ top: 0;
 left: 100%;
 height: 100%;
 overflow: hidden;//скрываем выезжающее сабменю
+z-index: 4;
    }
 
 .submenu-page {
@@ -589,23 +592,28 @@ display: none; //изначально скрыто
 
    &__slider {
       margin: 0px 0px 56px 0px;
+       position: relative;
    }
 }
+
 .mainslider {
 
    &__body {
+    
    }
 
    &__slide {
-      position: relative;
+       position: relative;
+     
    }
 
    &__content {
-      position: relative;
+    position: absolute;
       z-index:2;
       min-height: 100px;
    }
-
+}
+/*
    &__image img {
       position: absolute;
       left: 0;
@@ -614,14 +622,8 @@ display: none; //изначально скрыто
         height: 100%;
          object-fit: cover;
    }
-   &__dots {
-   }
-}
-// раб класс
-
-
-
-
+} */
+// верстка текста над слайдом
 .content-mainslider {
 padding: 20px 35px;
    &__title {
@@ -641,13 +643,13 @@ padding: 20px 35px;
 
    &__footer {
       padding: 15px 0px 0px 0px;
-   text-align: center;
+   text-align: left;
    }
 
    &__price {
       margin-bottom: 24px;
       font-size: 36px;
-      color: #fff;
+      color: #000;
       line-height: 24px;
       font-weight: 900;
       &::after {
@@ -659,25 +661,32 @@ padding: 20px 35px;
 
    &__button {
       height: 33px;
-      border: 3px solid #fff;
-      color: #fff;
+      border: 3px solid #979797;
+      color: #000;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       border-radius: 15px;
       padding: 0px 20px;
-  
       background: url('../img/icons/main/slider-arrow.png') 90% 40% no-repeat;
       background-size: 35px;
       align-items: center;
+      background-color: #979797;
+      transition: all 0.3s ease 0s;
+      &:hover {
+         background-color: #f68038;
+         border: 3px solid #f68038;
+            }
       span {
 font-size: 14px;
 color: #fff;
+font-weight: 600;
 text-transform: uppercase;
 padding: 0px 30px 0px 0px;
-
       }
+    
    }
+  
 }
 .text-mainslider {
 color: #333;
@@ -685,12 +694,13 @@ font-size: 18px;
 font-weight: 900;
 line-height: 24px;
    &__text-1 {
-      color: #f68038;
+      color: #fff;
+      background-color: #f68038;
+      padding: 5px 10px;
    }
    &__text-2 {
       color: #fff;
       background-color: #92918e;
-     
 display: inline-block;
       align-items: center;
       padding: 5px 10px;
@@ -701,7 +711,6 @@ display: inline-block;
 }
 
 
-
 //===================================================================================================================
 
 //</ОСНОВНОЙ БЛОК>====================================================================================================
@@ -709,3 +718,4 @@ display: inline-block;
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>====================================================================================================
 @import "forms.scss"; //кнопки чекбоксы поля
 @import "ui.scss"; // сборка одинаковых классов вписываем сюда!}
+@import "slider.scss"; // слайдер swiper

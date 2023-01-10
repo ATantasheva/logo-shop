@@ -1,0 +1,79 @@
+
+// Кастомные стили
+ .swiper-container {
+   height: 383px;
+ }
+.image-slider {
+	padding: 10px 0 0px 0;
+   overflow: hidden; //чтобы остальные слайды не вылезали при переключении
+}
+.image-slider__wrapper {
+   max-height: 100%;
+}
+.image-slider__slide {
+   max-width: 100%;
+  //position: relative;
+}
+.image-slider__image {
+ 
+}
+.image-slider .swiper-slide {
+position: relative;
+}
+.image-slider__image img {
+    max-width: 100%;
+      object-fit: cover;
+}
+/* Пагинация */
+.swiper-pagination {
+   position: relative;
+}
+.image-slider .swiper-pagination {
+  position: absolute; // положение относитель слайдера посередине
+//position: relative;
+  z-index: 3;
+  bottom: -27.5px;
+  counter-reset: item;
+}
+
+/* Буллеты */
+.image-slider .swiper-pagination-bullet {
+	width: 55px;
+	height: 55px;
+   border-radius: 50%;
+   border: 2px solid #fff;
+   position: relative;
+   overflow: hidden;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: 1;
+  cursor: pointer;
+  &:after{ //делаем цифры на кнопках и опасити регулируем
+   opacity: 0;
+   transition: all 0.3s easse 0s;
+   font-size: 16px;
+   color: #fff;
+   font-weight: 900;
+   background: #f68038;
+   position: absolute;
+   top:0;
+   left:0;
+   width: 100%;
+   height: 100%;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   counter-increment: item;
+content:counter(item);
+}
+}
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+   margin: 0px 24px;
+   
+}
+.image-slider .swiper-pagination-bullet-active {
+&::after {
+opacity: 1;
+}
+}
