@@ -162,6 +162,7 @@ $md4: 479.98; //мал смартфон
 //@import "popup.scss";
 @import "header.scss";
 @import "footer.scss";
+@import "home.scss";
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
 
 //<ОСНОВНОЙ БЛОК>====================================================================================================
@@ -191,6 +192,7 @@ padding: 133px 0px 0px 0px;
     //  position: relative;
    }
    &__menu {
+      margin: 0px 0px 40px 0px;
    }
    &__content {
       @media(min-width: $md2+px){
@@ -224,6 +226,9 @@ text-transform: uppercase;
 letter-spacing: 0.025em;
 color: #ffffff;
    }
+
+   //=============================================================================   
+//меню бургер на асайд карточке
    &__burger {
       /* поскольку бургер -флекс-эл ему надо указать ширину через флекс */
       flex: 0 0 36px;
@@ -285,6 +290,7 @@ position: relative;
          &__parent {
             &::after {
                content: "";
+               transition: all 0.3s ease 0s;
                position: absolute;
                right: 10px;
                //top: 50%;
@@ -292,11 +298,13 @@ position: relative;
                width: 14px;
                height: 14px;
                background: url('../img/icons/main/arrou__sidebar.png');
+               @media(max-width: $md2+px){
+transform: translate(0px, -340%) rotate(90deg);
+               }
             }
             &._active {
                .menu-page__submenu {
-
-                     pointer-events: all;
+               pointer-events: all;
                  //чтобы на актив при ховере в нужно месте выезжала карточка
                }
                .submenu-page__item {
@@ -305,6 +313,14 @@ position: relative;
       z-index: 2; //увеличив для аквтиного объекта
       transform: translate(0px, 0px);
    }
+               }
+               .menu-page__link {
+                  @media(max-width: $md2+px){
+                     &::after {
+                        transform: translate(0px, -340%) rotate(-90deg);
+                     }
+                     
+                  }
                }
             }
          }
@@ -369,6 +385,9 @@ transition: all 0.3s ease 0s;
    &__product {
       @media(max-width: $md2+px){
          display: none;
+      }
+      .item-product {
+         border: 0;
       }
    }
    &__menu {
@@ -492,7 +511,6 @@ color: #333333;
 //поле поиска
 
 .page {
-
    &__search {
       margin: 0px 0px 22px 0px;
    }
@@ -507,12 +525,10 @@ position: relative;
       background-color: #f3f3f3;
       padding: 0px 14px;
       cursor: pointer;
-
-
+      @media(max-width:  $md4+px) {
+         display: none;
       }
-     
-   
-
+      }
    &__title {
       display: flex;
       align-items: center;
@@ -521,8 +537,14 @@ position: relative;
 line-height: 1.2;
 font-weight: 300;
 color: #666666;
+@media(max-width:  $md3+px){
+   font-size: 11px;
+}
 > span {
    margin: 0px 13px;
+   @media(max-width:  $md3+px){
+      margin: 0px 5px;
+   }
    border-bottom: 1px dashed #666666;
    &:last-child {
       display: none; //второй спан изначально скрыт
@@ -589,8 +611,9 @@ display: none; //изначально скрыто
    display: block;
 }
    &__row {
-      display: flex;
-     
+      @media(min-width: $md3+px){
+         display: flex;
+      }
    }
 
    &__column {
@@ -600,7 +623,15 @@ display: none; //изначально скрыто
       &:last-child {
          border: 0;
       }
-   }
+      @media(max-width: $md2+px){
+         padding: 27px 10px;
+      }
+      @media(max-width: $md3+px) {
+         padding: 10px 10px;
+        // margin: 0px 20px;
+         }
+      }
+   
 
    &__list {
      li {
@@ -611,9 +642,12 @@ display: none; //изначально скрыто
       &:last-child{
          margin: 0px 0px 0px 0px;
       }
+      @media(max-width: $md3+px){
+         font-size: 16px;
+      }
      }
    }
- 
+
    &__checkbox {
       .checkbox__input {
          display: none;
@@ -621,16 +655,15 @@ display: none; //изначально скрыто
           color: #f68038;
          }
       }
+   }
   .checkbox__text {
    color: #999;
    &:before {
    display: none;
    }
   }
-
-   }
-
 }
+
 //============================================================================================================
 //Слайдер
 
@@ -755,9 +788,179 @@ display: inline-block;
       color: #979797;
    }
 }
+//=================================================================================================
+//блок новостей
 
+.page {
+
+   &__news-side {
+      padding: 44px 0px 0px 0px;
+      margin: 0px 0px 75px 0px;
+   }
+}
+.news-side {
+
+   &__title {
+      display: inline-block;
+      margin: 0px 0px 25px/30px * 1em 0px;
+   }
+&__label {
+   transition: all 0.3s ease 0s;
+   font-size: 12px;
+line-height: 18px;
+font-weight: 900;
+text-transform: uppercase;
+color: #333333;
+display: inline-block;
+      margin: 0px 0px 20px/12px * 1em 0px;
+&:hover {
+   color: #fd8322;
+}
+}
+   &__items {
+   }
+
+   &__item {
+      margin: 0px 0px 45px 0px;
+      &:last-child {
+         margin: 0px 0px 0px 0px;
+      }
+   }
+
+   &__body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+   }
+
+   &__data {
+      flex: 0 0 30px;
+      color: #d8d8d8;
+      text-align: center;
+      span {
+         font-size: 24px;
+         line-height: 1.2;
+         font-weight: 900;
+      }
+font-size: 18px;
+font-weight: 300;
+text-transform: none;
+   }
+
+   &__text {
+      padding: 0px 0px 0px 15px;
+      color: #666666;
+      font-size: 12px;
+line-height: 18px;
+font-weight: 300;
+   }
+}
+.side-title {
+   font-size: 30px;
+   font-family: 'UniSans';
+line-height: 1.2;
+font-weight: 900;
+text-transform: uppercase;
+letter-spacing: 0.025em;
+color: #dadada;
+transition: all 0.3s ease 0s;
+&:hover {
+   color: #1ab9ce;
+}
+}
 
 //===================================================================================================================
+// блок отзывы
+.page {
+
+   &__reviews-side {
+   }
+}
+.reviews-side {
+
+   &__title {
+      display: inline-block;
+      margin: 0px 0px 20px/30px * 1em 0px;
+   }
+
+   &__items {
+   }
+
+   &__item {
+      margin: 0px 0px 39px 0px;
+      display: inline-block;
+      &:last-child {
+         margin: 0px 0px 0px 0px;
+      }
+      &:hover {
+.reviews-side__data, .reviews-side__user {
+color: #1ab9ce;
+}
+.reviews-side__body {
+   background-color: #1ab9ce;
+   color: #fff;
+   &::before {
+      color: #64deee;
+   }
+}
+      }
+   }
+
+   &__header {
+      display: flex;
+      justify-content: space-between;
+      margin: 0px 0px 10px 0px;
+   }
+
+   &__user {
+      font-size: 12px;
+line-height: 18px;
+font-weight: 900;
+text-transform: uppercase;
+color: #333333;
+&:hover {
+   color: #1ab9ce;
+}
+   }
+
+   &__data {
+      font-size: 12px;
+line-height: 18px;
+font-weight: 300;
+text-transform: uppercase;
+color: #999999;
+&:hover {
+   color: #1ab9ce;
+}
+   }
+
+   &__body {
+      padding: 14px 8px 14px 30px;
+      position: relative;
+      &::before { //верстаем кавычку
+         content: '"';
+         position: absolute;
+         left: 8px;
+         top: 12px;
+         font-size: 48px;
+         font-weight: 900;
+         text-transform: uppercase;
+         color: #dadada;
+         line-height: 1;
+      }
+      font-size: 12px;
+line-height: 18px;
+font-weight: 300;
+color: #666666;
+&:hover {
+   
+}
+   }
+}
+
+//============================================================================================
+
+
 
 //</ОСНОВНОЙ БЛОК>====================================================================================================
 

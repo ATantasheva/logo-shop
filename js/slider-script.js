@@ -41,3 +41,24 @@ for (let index =0; index < mainsliderImages.length; index++) {
   //проверка  console.log(mainsliderImage);
   mainsliderDotts[index].style.backgroundImage = "url('" + mainsliderImage + "')";
 }
+//проверка на существование слайдера
+if(document.querySelector('.products-slider')) {
+let productsSlider = new Swiper('.products-slider__item', {
+   observer: true,
+   observeParents:true,
+slidesPerView: 1,
+spaceBetween: 0,
+autoHeight: true,
+speed: 800,
+//loop: true,
+
+//стрелки
+navigation: {
+   nextEl:'.products-slider__arrow_next',
+   prevEl:'.products-slider__arrow_prev',
+},
+
+})
+
+};
+
