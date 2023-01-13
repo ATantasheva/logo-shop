@@ -32,6 +32,7 @@ new Swiper('.image-slider',{
   
 }
 );
+//вставка картинок в буллеты
 let mainsliderImages = document.querySelectorAll('.mainslider__image');
 
 let mainsliderDotts = document.querySelectorAll('.mainslider__dotts .swiper-pagination-bullet');
@@ -41,9 +42,12 @@ for (let index =0; index < mainsliderImages.length; index++) {
   //проверка  console.log(mainsliderImage);
   mainsliderDotts[index].style.backgroundImage = "url('" + mainsliderImage + "')";
 }
+
+
+
 //проверка на существование слайдера
 if(document.querySelector('.products-slider')) {
-let productsSlider = new Swiper('.products-slider__item', {
+let productsSlider = new Swiper('.product-item__slider', {
    observer: true,
    observeParents:true,
 slidesPerView: 1,
@@ -51,13 +55,15 @@ spaceBetween: 0,
 autoHeight: true,
 speed: 800,
 //loop: true,
-
+pagination: {
+   el: '.products-slider__info',
+   type: 'fraction'
+}, 
 //стрелки
 navigation: {
    nextEl:'.products-slider__arrow_next',
    prevEl:'.products-slider__arrow_prev',
 },
-
 })
 
 };

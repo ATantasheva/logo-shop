@@ -202,7 +202,9 @@ padding: 133px 0px 0px 0px;
       }
    }
 }
-
+.page__content {
+   margin: 0px 0px 50px 0px;
+}
 .menu-page {
    background: url('../img/bg__aside_menu.png') top repeat;
 position: relative; //суб-меню при ховере относительно всего меню-сайдбар
