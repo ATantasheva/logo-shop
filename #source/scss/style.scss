@@ -195,6 +195,7 @@ padding: 133px 0px 0px 0px;
       margin: 0px 0px 40px 0px;
    }
    &__content {
+      margin: 0px 0px 30px 0px;
       @media(min-width: $md2+px){
          flex: 1 1 auto;
          padding: 0px 0px 0px 30px;
@@ -204,6 +205,9 @@ padding: 133px 0px 0px 0px;
 }
 .page__content {
    margin: 0px 0px 50px 0px;
+   @media(max-width: $md2+px){
+      margin: 0px 0px 25px 0px;
+   }
 }
 .menu-page {
    background: url('../img/bg__aside_menu.png') top repeat;
@@ -227,6 +231,9 @@ font-weight: 900;
 text-transform: uppercase;
 letter-spacing: 0.025em;
 color: #ffffff;
+@media(max-width: $md4+px){
+   font-size: 20px;
+}
    }
 
    //=============================================================================   
@@ -674,7 +681,11 @@ display: none; //изначально скрыто
    &__slider {
       margin: 0px 0px 56px 0px;
        position: relative;
+       @media(max-width: $md4+px){
+         margin: 0px 0px 0px 0px;
+      }
    }
+  
 }
 
 .mainslider {
@@ -694,16 +705,6 @@ display: none; //изначально скрыто
       min-height: 100px;
    }
 }
-/*
-   &__image img {
-      position: absolute;
-      left: 0;
-      top: 0;
-        width: 100%;
-        height: 100%;
-         object-fit: cover;
-   }
-} */
 // верстка текста над слайдом
 .content-mainslider {
 padding: 20px 35px;
@@ -717,6 +718,16 @@ padding: 20px 35px;
          color: #f68038;
          display: block
       }
+      @media(max-width: 640px){
+         font-size: 35px;
+         line-height: 40px;
+         margin: 0px 0px 10px 0px;
+      }
+      @media(max-width: $md4+px) {
+         font-size: 22px;
+         line-height: 24px;
+         margin: 0px 0px 5px 0px;
+      }
    }
 
    &__text {
@@ -725,6 +736,9 @@ padding: 20px 35px;
    &__footer {
       padding: 15px 0px 0px 0px;
    text-align: left;
+   @media(max-width: $md4+px)  {
+      padding: 5px 0px 0px 0px;
+   }
    }
 
    &__price {
@@ -738,6 +752,10 @@ padding: 20px 35px;
          font-size: 30px;
          margin: 0px 0px 0px 10px;
       }
+        @media(max-width: $md4+px)  {
+         margin-bottom: 5px;
+         font-size: 25px;
+        }
    }
 
    &__button {
@@ -754,6 +772,9 @@ padding: 20px 35px;
       align-items: center;
       background-color: #979797;
       transition: all 0.3s ease 0s;
+      @media(max-width: $md4+px) {
+         height: 25px;
+      }
       &:hover {
          background-color: #f68038;
          border: 3px solid #f68038;
@@ -764,6 +785,9 @@ color: #fff;
 font-weight: 600;
 text-transform: uppercase;
 padding: 0px 30px 0px 0px;
+@media(max-width: $md4+px) {
+   font-size: 10px;
+}
       }
     
    }
@@ -774,17 +798,20 @@ color: #333;
 font-size: 18px;
 font-weight: 900;
 line-height: 24px;
+@media(max-width: $md4+px) {
+   font-size: 12px;
+}
    &__text-1 {
       color: #fff;
       background-color: #f68038;
-      padding: 5px 10px;
+      padding: 2px 6px;
    }
    &__text-2 {
       color: #fff;
       background-color: #92918e;
 display: inline-block;
       align-items: center;
-      padding: 5px 10px;
+      padding: 2px 6px;
    }
    &__text-3 {
       color: #979797;
@@ -798,6 +825,10 @@ display: inline-block;
    &__news-side {
       padding: 44px 0px 0px 0px;
       margin: 0px 0px 75px 0px;
+      @media(max-width: $md2+px){
+         padding: 10px 0px 0px 0px;
+         margin: 0px 0px 25px 0px;
+      }
    }
 }
 .news-side {
@@ -805,6 +836,9 @@ display: inline-block;
    &__title {
       display: inline-block;
       margin: 0px 0px 25px/30px * 1em 0px;
+      @media(max-width: $md2+px) {
+         margin: 0px 0px 5px/30px * 1em 0px;
+      }
    }
 &__label {
    transition: all 0.3s ease 0s;
@@ -827,12 +861,21 @@ display: inline-block;
       &:last-child {
          margin: 0px 0px 0px 0px;
       }
+      @media(max-width: $md2+px) {
+         margin: 0px 0px 20px 0px;
+         &:last-child {
+            margin: 0px 0px 0px 0px;
+         }
+      }
    }
 
    &__body {
       display: flex;
       align-items: center;
       justify-content: center;
+      @media(max-width: $md2+px) {
+         justify-content: flex-start;
+      }
    }
 
    &__data {
@@ -883,6 +926,9 @@ transition: all 0.3s ease 0s;
    &__title {
       display: inline-block;
       margin: 0px 0px 20px/30px * 1em 0px;
+      @media(max-width: $md2+px) {
+         margin: 0px 0px 5px/30px * 1em 0px;
+      }
    }
 
    &__items {
@@ -890,7 +936,8 @@ transition: all 0.3s ease 0s;
 
    &__item {
       margin: 0px 0px 39px 0px;
-      display: inline-block;
+      display: block;
+     
       &:last-child {
          margin: 0px 0px 0px 0px;
       }
@@ -905,6 +952,12 @@ color: #1ab9ce;
       color: #64deee;
    }
 }
+      }
+      @media(max-width: $md2+px){
+         margin: 0px 0px 20px 0px;
+         &:last-child {
+            margin: 0px 0px 0px 0px;
+         }
       }
    }
 
@@ -961,8 +1014,182 @@ color: #666666;
 }
 
 //============================================================================================
+//блок о компании
+.page {
 
+   &__text {
+      margin: 0px 0px 38px 0px;
+   }
+}
+.text-block {
 
+   &__container {
+      @media(max-width: $md2+px){
+         padding: 0px 0px 0px 0px;
+      }
+   }
+
+   &__body {
+      padding: 45px 35px;
+      background: url('../img/bg_company.png') 0 0 repeat;
+      @media(max-width: $md2+px){
+         padding: 25px 20px 15px 20px;
+      }
+   }
+
+   &__title {
+      font-family: 'UniSans';
+      font-size: 30px;
+      line-height: 1.2;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 0.025em;
+      color: #22b7ca;
+      margin: 0px 0px 28px 0px;
+   }
+
+   &__row {
+      @media(min-width: $md2+px) {
+         display: flex;
+         margin: 0 -30px;
+      }
+   }
+
+   &__column {
+      margin: 0px 0px 30px 0px;
+      @media(min-width: $md2+px)  {
+         padding: 0px 30px;
+         flex: 0 1 50%;
+      }
+    color: #ffffff;
+    font-size: 12px;
+    line-height: 24px;
+    letter-spacing: 0.025em;
+    position: relative;
+    p {
+      font-weight: 400;
+      &:not(:last-child) {
+         margin: 0px 0px 20px 0px;
+      }
+    }
+      
+   }
+
+   &__label {
+font-weight: 900;
+text-transform: uppercase;
+margin: 0px 0px 5px 0px;
+   }
+
+   &__list {
+      li{
+         font-size: 12px;
+         line-height: 24px;
+         font-weight: 400;
+         letter-spacing: 0.025em;
+         color: #ffffff;
+         &::before {
+            content: '';
+            margin: 0px 17px 0px 7px;
+            display: inline-block;
+            width: 11px;
+            height: 12px;
+            background: url('/img/icons/main/arrow_company.png')left 1px no-repeat;
+         }
+      }
+      @media(max-width: $md1+px) {
+         br {
+            display: none;
+         }
+      }
+   }
+   &__image {
+      position: absolute;
+      right: 10px;
+      bottom: -150px;
+@media(max-width: $md1+px){
+   display: none;
+}
+   }
+}
+//=====================================================================================================
+//блок меню на многих страницах
+.page {
+
+   &__info-menu {
+      border-top: 3px dashed #dadada;
+      border-bottom: 3px dashed #dadada;
+      padding: 10px 0px;
+      margin: 0px 0px 38px 0px;
+   }
+}
+.info-menu {
+
+   &__container {
+      @media(max-width: $md3+px){
+         display: flex;
+      }
+   }
+
+   &__body {
+      display: inline-block;
+      border-bottom: 1px solid rgba(176,176,176,0.2);
+      @media(max-width: $md3+px) {
+         flex: 0 1 50%;
+         display: block;
+      }
+   }
+
+   &__line {
+      display: flex;
+      align-items: center;
+      padding: 15px;
+      @media(max-width: $md3+px) {
+         flex: 0 1 50%;
+         display: block;
+      }
+   }
+
+   &__label {
+      font-size: 14px;
+line-height: 1.2;
+font-weight: 900;
+letter-spacing: 0.025em;
+color: #333333;
+margin: 0px 35px 0px 0px;
+@media(max-width: $md3+px) {
+   margin: 0px 10px 0px 0px;
+}
+   }
+
+   &__list {
+      @media(min-width: $md3+px) {
+         display: flex;
+         align-items: center;
+      }
+      li {
+         margin: 0px 30px 0px 0px;
+         @media(max-width: $md3+px) {
+            margin: 0px 10px 0px 0px;
+         }
+      }
+   }
+
+   &__link {
+      font-size: 12px;
+line-height: 24px;
+font-weight: 300;
+color: #1ab9ce;
+&:hover {
+   color: #333333;
+}
+@media(max-width: $md3+px) {
+  font-size: 14px;
+}
+   }
+}
+
+//==================================================================================================================================
 
 //</ОСНОВНОЙ БЛОК>====================================================================================================
 

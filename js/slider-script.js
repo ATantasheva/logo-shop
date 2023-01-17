@@ -44,7 +44,7 @@ for (let index =0; index < mainsliderImages.length; index++) {
 }
 
 
-
+//Слайдер с каталогом товаров
 //проверка на существование слайдера
 if(document.querySelector('.products-slider')) {
 let productsSlider = new Swiper('.product-item__slider', {
@@ -67,4 +67,41 @@ navigation: {
 })
 
 };
-
+//Слайдер с брендами
+if(document.querySelector('.brands-slider')) {
+   let brandsSlider = new Swiper('.brands-slider__body', {
+      observer: true,
+      observeParents:true,
+   slidesPerView: 4,
+   // Количество пролистываемых слайдов
+   slidesPerGroup: 1,
+   spaceBetween: 0,
+  // autoHeight: true,
+   speed: 800,
+   loop: true,
+   //стрелки
+   navigation: {
+      nextEl:'.brands-slider__arrow-next',
+      prevEl:'.brands-slider__arrow-prev',
+   },
+   //адаптив 
+   breakpoints: {
+		320: {
+			slidesPerView: 1,
+		},
+		480: {
+			slidesPerView: 2,
+		},
+      600: {
+			slidesPerView: 3,
+		},
+      768: {
+			slidesPerView: 4,
+		},
+		992: {
+			slidesPerView: 5,
+		}
+	},
+   })
+   
+   };

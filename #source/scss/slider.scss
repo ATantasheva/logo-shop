@@ -25,7 +25,6 @@ position: relative;
 }
 .image-slider__image img {
     max-width: 100%;
-
    object-fit: cover;
 }
 /* Пагинация */
@@ -38,6 +37,12 @@ position: relative;
   z-index: 3;
   bottom: -27.5px;
   counter-reset: item;
+  @media(max-width: 550px) {
+   bottom: -7.5px;
+  }
+  @media(max-width: 490px) {
+   bottom: 37px;
+  }
 }
 
 /* Буллеты */
@@ -74,6 +79,9 @@ content:counter(item);
 }
 .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, .swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
    margin: 0px 24px;
+   @media(max-width: 640px) {
+      margin: 0px 10px;
+   }
    
 }
 .image-slider .swiper-pagination-bullet-active {
@@ -108,8 +116,6 @@ opacity: 1;
 .swiper-wrapper {
 }
 
-
-
 .products-slider {
 
 
@@ -143,34 +149,14 @@ color: #dadada;
       @media(max-width: $md3+px) {
          width: 130px;
       }
- 
    }
-
    &__arrow {
-      background: url('../img/icons/main/slider_arrow.svg') 0 0 no-repeat;
-      width: 50px;
-      height: 30px;
-      cursor: pointer;
-      &:hover {
-         background: url('../img/icons/main/slider_arrow-hover.svg') 0 0 no-repeat;
-      }
+     
       &_prev {
-       transform: scale(-1, 1);
-      //transform: rotate(-180deg);
-      &:hover {
-         transform: rotate(0deg);
-         background: url('../img/icons/main/slider_arrow-hover.svg') 0 0 no-repeat;
+       
       }
-      }
-
       &_next {
-         &:hover {
-         transform: scale(-1, -1);
-           //transform: rotate(-180deg);
-            background: url('../img/icons/main/slider_arrow-hover.svg') 0 0 no-repeat;
-         }
       }
-      
    }
    &__info {
       text-align: center;
@@ -405,3 +391,73 @@ color: #f68038;
   
 }
 }
+
+//================================================================================================
+//слайдер с брендами
+.page {
+   overflow: hidden;
+   &__brands {
+      overflow: hidden;
+      margin: 0px 0px 32px 0px;
+   }
+}
+.brands-slider {
+border-top: 3px dashed #dadada;
+border-bottom: 3px dashed #dadada;
+padding: 25px 0px;
+overflow: hidden;
+   &__container {
+      position: relative;
+      //скрываем лишние слайды
+      overflow: hidden;
+   }
+
+   &__body {
+    padding: 0px 40px;
+   overflow: hidden; 
+    
+   }
+.brands-slider__body .swiper-wrapper { //для центровки картинок брендов
+   display: flex;
+   align-items: center;
+   @media(min-width: $md4+px){justify-content: center;}
+}
+   &__slide {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+     padding: 0px 10px;
+  img {
+   max-width: 100%;
+  }
+   }
+
+   &__arrows {
+   }
+//чтобы стрелки были внутри слайдера по-середине
+   &__arrow {
+      position: absolute;
+      top: 50%;
+      margin: -15px 0px 0px 0px;
+      z-index: 2;
+      width: 30px;
+   }
+
+   &__arrow-prev {
+      left: 10px;
+      @media(min-width: $md1+px){
+         left: 0;
+      }
+      
+   }
+
+   &__arrow-next {
+      right: 10px;
+      @media(min-width: $md1+px) {
+         right: 0;
+      }
+   
+   }
+}
+
+

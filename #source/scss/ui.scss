@@ -2,8 +2,30 @@
 
 
 //</ОСНОВНОЙ БЛОК>====================================================================================================
-
-
+//классы для стрелок слайдера
+._arrow {
+   background: url('../img/icons/main/slider_arrow.svg') 0 0 no-repeat;
+   width: 50px;
+   height: 30px;
+   cursor: pointer;
+   &:hover {
+      background: url('../img/icons/main/slider_arrow-hover.svg') 0 0 no-repeat;
+   }
+}
+._arrow-next {
+   &:hover {
+       background: url('../img/icons/main/slider_arrow-hover.svg') 0 0 no-repeat;
+         transform: rotate(-180deg);
+      }
+}
+._arrow-prev {
+   //transform: scale(-1, 1);
+   transform: rotate(180deg);
+   &:hover {
+      transform: rotate(0deg);
+      background: url('../img/icons/main/slider_arrow-hover.svg') 0 0 no-repeat;
+   }
+}
 
 //<ГОТОВЫЕ КЛАССЫ>====================================================================================================
 .row:after{display: block;content: '';clear: both;}
