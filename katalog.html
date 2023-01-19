@@ -2,7 +2,7 @@
 <html lang="ru">
 
 <head>
-   <title>Logo.KIT</title><!--имя файла-->
+   <title>Каталог-Logo.KIT</title><!--имя файла-->
    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
    <meta name="format-detection" content="telephone=no">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -21,8 +21,85 @@
 
 <body>
 
- <!--@import "header.html"--> 
-   <div class="wrapper">
+<header class="header">
+   <div class="header__top top-header">
+      <div class="header__content container">
+         <div class="top-header__column">
+            <div class="top-header__menu">
+               <!--заготовка для бургера-->
+               <div class="menu__icon icon-menu"> 
+                  <span></span>
+                  <span></span>
+                  <span></span>
+               </div>
+               <nav class="menu__body">
+                 <ul class="menu__list">
+                  <li><a href="#" class="menu__link">Бренды</a></li>
+                  <li><a href="#" class="menu__link">Распродажа</a></li>
+                  <li><a href="#" class="menu__link">Доставка и Сборка</a></li>
+               </ul>
+                  <ul class="menu__list">
+                  <li><a href="#" class="menu__link">Гарантия</a></li>
+                  <li><a href="#" class="menu__link">Оплата</a></li>
+                  <li><a href="#" class="menu__link">Контакты</a></li>
+                 </ul>
+               </nav>
+            </div>
+         </div>
+         <div class="top-header__column">
+            <a href="#" class="top-header__logo">
+               <img src="./img/logo.png" alt="Логотип">
+            </a>
+            <span>спортивный магазин</span>
+         </div>
+         <div class="top-header__column">
+         <div class="top-header__contacts contacts-header">
+<div class="contacts-header__column">
+            <div class="contacts-header__item contacts-header__item_icon">
+               <div class="contacts-header__label">Москва</div>
+               <a href="tel:84991234567" class="contacts-header__phone">8-499-123-45-67</a>
+            </div>
+         </div>
+         <div class="contacts-header__column contacts-header__column_cart">
+            <div class="contacts-header__item contacts-header__item_second-phone">
+               <div class="contacts-header__label">Бесплатно для России</div>
+               <a href="tel:8800123-4567" class="contacts-header__phone">8-800-123-45-67</a>
+            </div>
+         </div>
+         </div>
+      </div>
+      </div>
+   </div>
+   <div class="header__bottom bottom-header">
+<div class="bottom-header__container container">
+<div class="bottom-header__column">
+   <ul data-da=".menu__body,640,0" class="bottom-header__actions actions-header">
+      <li><a href="#" class="actions-header__item actions-header__item_login"><span>Вход</span></a></li>
+      <li><a href="#" class="actions-header__item actions-header__item_reg"><span>Регистрация</span></a></li>
+      <li><a href="mailto:sport@gmail.com" class="actions-header__item actions-header__item_mail"><span>sport@gmail.com</span></a></li>
+   </ul>
+</div>
+<div class="bottom-header__column">
+   <div class="bottom-header__info info-header">
+<div class="info-header__column">
+   <a data-da=".menu__body,640,3" href="#" class="info-header__callback"><span>Обратный звонок</span></a>
+</div>
+<div class="info-header__column">
+   <div href="#" class="info-header__schedule">
+      <p><span>Пн–Пт: </span>09:00–21:00;</p>
+      <p><span>Сб–Вс: </span>10:00–20:00</p>
+   </div>
+</div>
+<div class="info-header__column info-header__column_cart">
+   <a data-da=".contacts-header__column_cart, 640, 2" href="#" class="info-header__cart">
+      <span>12</span>
+   </a>
+</div>
+   </div>
+</div>
+</div>
+   </div>
+</header>   <div class="wrapper">
       <main class="page">
      <div class="page__container container">
 <aside class="page__side">
@@ -218,54 +295,61 @@
          </ul>
       </div> 
    </nav>
-   <!--блок для адаптива перемещения-->
-   <div data-da=".page__content,992,last" class="page__content-side">
-   <!--колонка с новостями-->
-   <div class="page__news-side news-side">
-<a href="" class="news-side__title side-title">Новости</a>
-<div class="news-side__items">
-   <div class="news-side__item">
-      <a href="" class="news-side__label">Снижение цен на игровые площадки 
-         Jungle Gym</a>
-      <div class="news-side__body">
-         <div class="news-side__data"><span>12</span> авг</div>
-         <div class="news-side__text">Уважаемые покупатели! Мы рады сообщить вам о снижении 
-            цены с 27 июля на детский игровой комплекс</div>
+   <div class="filter">
+      <div class="filter__title">Фильтр товаров</div>
+      <!--чтобы на адаптиве скрыть-->
+      <div class="filter__body">
+         <div class="filter__section section-filter">
+            <div class="section-filter__title">Цена (руб.):</div>
+            <div class="section-filter__body">
+                  <!--сам слайдер-->
+               <div class="price-filter">
+<div class="price-filter__slider"></div>
+<div class="price-filter__values  values-price-filter">
+   <div class="values-price-filter__column">
+      <div class="values-price-filter__label">от</div>
+      <div class="values-price-filter__input">
+         <input id="price-start" class="input" autocomplete="off" name="form[]" type="text">
       </div>
    </div>
-   <div class="news-side__item">
-      <a href="" class="news-side__label">Поступление батутов Eclipse!</a>
-      <div class="news-side__body">
-         <div class="news-side__data"><span>19</span> авг</div>
-         <div class="news-side__text">Уважаемые покупатели! Мы рады сообщить вам о снижении 
-            цены с 27 июля на детский игровой комплекс</div>
-      </div>
-   </div>
-</div>
-   </div>
-   <div class="page__reviews-side reviews-side">
-      <a href="" class="reviews-side__title side-title">Отзывы</a>
-      <div class="reviews-side__items">
-         <a href="" class="reviews-side__item">
-            <div class="reviews-side__header">
-<div class="reviews-side__user">Павел Никифоров</div>
-<div class="reviews-side__data">12.09.2015</div>
-</div>
-<div class="reviews-side__body">Ради экономии места в тренажерном зале приобрел многофункциональный 
-   силовой тренажер Life Gear. За такую небольшую стоимость и с такими 
-   возможностями, он просто не заменим.</div>
-         </a>
-         <a href="" class="reviews-side__item">
-            <div class="reviews-side__header">
-<div class="reviews-side__user">Степан Николаевич</div>
-<div class="reviews-side__data">12.09.2015</div>
-</div>
-<div class="reviews-side__body">Спасибо за прекрасный совет, 
-   велосипед всей семье понравился и цену за него достойную запросили.</div>
-         </a>
+   <div class="values-price-filter__column">
+      <div class="values-price-filter__label">до</div>
+      <div class="values-price-filter__input">
+         <input id="price-end" class="input" autocomplete="off" name="form[]" type="text">
       </div>
    </div>
 </div>
+               </div>
+            </div>
+         </div>
+         <div class="filter__section section-filter">
+            <div class="section-filter__title">Товары для сравнения</div>
+            <div class="section-filter__body">
+               <div class="compare-filter">
+                  <div class="compare-filter__items">
+                     <div class="compare-filter__item">
+                        <a href="#" class="compare-filter__link">NordicTrack C100</a>
+                        <a href="#" class="compare-filter__remove"></a>
+                     </div>
+                     <div class="compare-filter__item">
+                        <a href="#" class="compare-filter__link">Clear Fit Luxury LT.20</a>
+                        <a href="#" class="compare-filter__remove"></a>
+                     </div>
+                     <div class="compare-filter__item">
+                        <a href="#" class="compare-filter__link">Ammity ATM 720 TFT+</a>
+                        <a href="#" class="compare-filter__remove"></a>
+                     </div>
+                  </div>
+                  <div class="compare-filter__footer">
+                     <div class="compare-filter__button"><span>Сравнить</span></div>
+                     <div class="compare-filter__clean"></div>
+                  </div>
+               </div>
+            </div>
+
+      </div>
+   </div>
+   </div>
 </aside>
 <div class="page__content">
    <form action="#" class="page__search search-page">
@@ -973,129 +1057,6 @@
  </div>
 </div>
 </div>
-<div class="page__brands brands-slider">
-   <div class="brands-slider__container container">
-      <!--делаем слайдер-->
-      <div class="brands-slider__body swiper-container">
-          <!--делаем оболочку для слайдера-->
-         <div class="swiper-wrapper">
-             <!--сам слайд-->
-         <div class="brands-slider__slide swiper-slide">
-<img src="./img/brands01.png" alt="Бренд">
-         </div>
-         <div class="brands-slider__slide swiper-slide">
-            <img src="./img/brands01.png" alt="Бренд">
-                     </div>
-                     <div class="brands-slider__slide swiper-slide">
-                        <img src="./img/brands01.png" alt="Бренд">
-                                 </div>
-                                 <div class="brands-slider__slide swiper-slide">
-                                    <img src="./img/brands02.png" alt="Бренд">
-                                             </div>
-                                             <div class="brands-slider__slide swiper-slide">
-                                                <img src="./img/brands01.png" alt="Бренд">
-                                                         </div>
-                                                         <div class="brands-slider__slide swiper-slide">
-                                                            <img src="./img/brands02.png" alt="Бренд">
-                                                                     </div>
-                                                                     <div class="brands-slider__slide swiper-slide">
-                                                                        <img src="./img/brands01.png" alt="Бренд">
-                                                                                 </div>
-                                                                                 <div class="brands-slider__slide swiper-slide">
-                                                                                    <img src="./img/brands02.png" alt="Бренд">
-                                                                                             </div>
-                                                                                             <div class="brands-slider__slide swiper-slide">
-                                                                                                <img src="./img/brands01.png" alt="Бренд">
-                                                                                                         </div>
-                                                                                                         <div class="brands-slider__slide swiper-slide">
-                                                                                                            <img src="./img/brands01.png" alt="Бренд">
-                                                                                                                     </div>
-                                                                                                                     <div class="brands-slider__slide swiper-slide">
-                                                                                                                        <img src="./img/brands01.png" alt="Бренд">
-                                                                                                                                 </div>
-                                                                                                                                 <div class="brands-slider__slide swiper-slide">
-                                                                                                                                    <img src="./img/brands01.png" alt="Бренд">
-                                                                                                                                             </div>
-      </div>
-      </div>
-      <div class="brands-slider__arrows">
-         <div class="brands-slider__arrow brands-slider__arrow-prev _arrow _arrow-prev"></div>
-         <div class="brands-slider__arrow brands-slider__arrow-next _arrow _arrow-next"></div>
-      </div>
-   </div>
-</div>
-<section class="page__text text-block">
-   <div class="text-block__container container">
-      <div class="text-block__body">
-         <h1 class="text-block__title">О компании</h1>
-         <div class="text-block__row">
-            <div class="text-block__column">
-               <p>Компания «CLEAR FIT» была организована для создания и реализации 
-                  качественного и надежного спортивного оборудования для домашнего и легкого 
-                  коммерческого использования. Дефицит качественных тренажеров в среднем 
-                  ценовом сегменте повлек за собой не мотивированный рост цен на надежное 
-                  оборудование, создав дополнительный сегмент "полукоммерческих" тренажеров, 
-                  что приблизило их стоимость к профессиональному оборудованию. А заполнение 
-                  среднего ценового сегмента сложилось из роста количества брендов и 
-                  производителей недорогих тренажеров с невысокими техническими 
-                  характеристиками, за счет увеличения количества дополнительных опций.  
-                  Главными критериями для выпуска продукции с маркой «CLEAR FIT» являются: 
-                  высокое качество, разумная цена и комфорт тренировок. Осуществить эту 
-                  непростую задачу позволил тандем европейских разработок и размещение 
-                  основного производства на Тайване. Узкая специализация на кардио-тренажеры 
-                  для дома позволяет поддерживать высокий контроль качества на всех ступенях 
-                  производства.</p>
-               <p>Разумный показатель «цена/качество» среди предлагаемых разными компаниями 
-                  спортивных тренажеров в последние годы – довольно редкое явление. Мы 
-                  достаточно кропотливо потрудились над тренажерами CLEAR FIT, чтобы 
-                  продемонстрировать новый подход к выпуску доступной, красивой и  надежной 
-                  продукции. Современные технологии обеспечивают комфорт и легкость управления 
-                  тренажерами CLEAR FIT.Многочисленные отзывы от наших покупателей  поступили 
-                  и продолжают поступать feedbacks от конечных потребителей. И теперь мы с 
-                  гордостью можем заявить, что учли многие Ваши пожелания предложения в 
-                  обновленных версиях тренажеров CLEAR FIT. Мы рады представить Вам новое 
-                  поколение наших тренажеров. Теперь оборудование стало не только «умнее», 
-                  удобнее, комфортнее, но и сохранило прежние показатели цены, оставаясь 
-                  доступным спортивным оборудованием для тех, кто ценит качество.</p>
-            </div>
-            <div class="text-block__column">
-               <h2 class="text-block__label">Концепция CLEAR FIT строится на следующих тезисах:</h2>
-               <ul class="text-block__list">
-                  <li>Спортивное оборудование для дома не отличается по эффективности и 
-                     безопасности от профессионального оборудования - от пользователя не 
-                     требуется специальная подготовка и  первичные навыки, наличие 
-                     индивидуального профессионального тренера, соответственно требует более 
-                     тщательного контроля.</li>
-                  <li>Тренажеры CLEAR FIT просты в управлении, легко адаптируются под 
-                     индивидуальные особенности пользователя, эффективны и безопасны, 
-                     рассчитаны на самостоятельные тренировки. Основное требование к тренажерам под маркой «CLEAR FIT» высокое 
-                     качество по разумной стоимости - сохранить это равновесие основная задача 
-                     профессионалов из всех областей производства CLEAR FIT</li>
-                  <li>Мир не стоит на месте - каждое поколение оборудования соответствует 
-                     современным технологиям. Продукция CLEAR FIT производится с учетом 
-                     новейших разработок по современной технологии, совершенствуя и улучшая 
-                     популярные серии оборудования и создавая принципиально новые актуальные 
-                     модели.
-                  <p>Прежде всего оборудование CLEAR FIT ориентировано на конечного 
-                     пользователя - компания открыта для диалога, мы рады всем вашим отзывам 
-                     и замечаниям, это основной фактор создания комфортной и удобной 
-                     продукции.</p></li>
-                     <li>Качественный продукт не мыслим без качественного <br>
-                        сервисного обслуживания - официальный сервисный <br>
-                        центр CLEAR FIT обеспечивает техническую поддержку <br>
-                        в течение всего времени эксплуатации тренажера, <br>
-                        качественные услуги сервисного обслуживания <br>
-                        как в течение гарантийного срока, так и в <br>
-                        постгарантийный период.</li>
-               </ul>
-               <div class="text-block__image">
-                  <img src="./img/velo.png" alt="картинка">
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-</section>
 <div class="page__info-menu info-menu">
    <div class="info-menu__container container">
       <div class="info-menu__body">
@@ -1124,10 +1085,120 @@
    </div>
 </div>
    </main>
-      <!-- @import "footer.html" -->
-   </div>
+<footer class="footer">
+	<div class='footer__content container'>
+      <div class="footer__body">
+         <div class="footer__column">
+            <div class="footer__block block-footer">
+               <div class="block-footer__column">
+                  <a href="#" class="logo-footer">
+                     <img src="./img/logo_footer.png" alt="логотип">
+                  </a>
+                  <div class="block-footer__phones">
+                     <p><a href="tel:84991234567" class="block-footer__phone">8-499-123-45-67</a></p>
+                     <p><a href="tel:84991234567" class="block-footer__phone">8-499-123-45-67</a></p>
+                  </div>
+               </div>
+               <div class="block-footer__column">
+                  <div class="block-footer__delivery delivery-footer">
+                     <div class="delivery-footer__title">Доставка транспортными компаниями:</div>
+                     <div class="delivery-footer__items">
+                        <div class="delivery-footer__item">
+                           <img src="./img/transport_1.png" alt="картинка">
+                        </div>
+                        <div class="delivery-footer__item">
+                           <img src="./img/transport_2.png" alt="картинка">
+                        </div>
+                        <div class="delivery-footer__item">
+                           <img src="./img/transport_3.png" alt="картинка">
+                        </div>
+                        <div class="delivery-footer__item">
+                           <img src="./img/transport_4.png" alt="картинка">
+                        </div>
+                        <div class="delivery-footer__item">
+                           <img src="./img/transport_5.png" alt="картинка">
+                        </div>
+                        <div class="delivery-footer__item">
+                           <img src="./img/transport_6.png" alt="картинка">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="footer__payments">
+               <img src="./img/icons/footer/payement.png" alt="картинка">
+               <img src="./img/icons/footer/payement.png" alt="картинка">
+               <img src="./img/icons/footer/payement.png" alt="картинка">
+               <img src="./img/icons/footer/payement.png" alt="картинка">
+               <img src="./img/icons/footer/payement.png" alt="картинка">
+            </div>
+         </div>
+         <div class="footer__column">
+            <div class="footer__widgets widgets-footer">
+               <div class="widgets-footer__column">
+                  <img src="./img/social_vidjet_1.png" alt="виджет">
+               </div>
+               <div class="widgets-footer__column">
+                  <img src="./img/social_vidjet_1.png" alt="виджет">
+               </div>
+            </div>
+         </div>
+      </div>
+      <div class="footer__bottom">
+         <div class="footer__copy">©2015 Все права защищены.</div>
+         <div class="footer__social social-footer">
+            <a href="#" class="social-footer__item">
+               <img src="./img/icons/footer/social_vk.png" alt="соц сеть">
+            </a>
+         </div>
+         <div class="footer__social social-footer">
+            <a href="#" class="social-footer__item">
+               <img src="./img/icons/footer/social_facebook.png" alt="соц сеть">
+            </a>
+         </div>
+         <div class="footer__social social-footer">
+            <a href="#" class="social-footer__item">
+               <img src="./img/icons/footer/social_instagram.png" alt="соц сеть">
+            </a>
+         </div>
+         <div class="footer__social social-footer">
+            <a href="#" class="social-footer__item">
+               <img src="./img/icons/footer/social_odnoklassniki.png" alt="соц сеть">
+            </a>
+         </div>
+      </div>
+	</div>
+</footer>   </div>
    <!--подключаем js -->
-   <!-- @import "js.html" -->
+
+<!--пустой js для программистов
+подключено определение мобилки или ПК поэтому первым -->
+<script src="js/custom.js" ></script>
+<!--собираются кусочки js которые я пишу -->
+<script src="js/main.js"></script>
+<!--динамический адаптив -->
+<script type="module" src="js/dynamic_adapt-master/app.js"></script>
+<!--слайдер на чистом js swiper от фрилансера по жизни -->
+<script src="js/swiper-bundle.min.js"></script>
+<!--cтилизация слайдера -->
+<script src="js/slider-script.js"></script> 
+
+<!--подкл swiper через ccылку <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script> -->
+
+
+<!--для слайдера для формата цифр -->
+<script src="js/wNumb.min.js"></script>
+<!--слайдер noUiSlider на чистом js
+   для слайдера в странице каталога фильтр - цена
+    от фрилансера по жизни -->
+<script src="js/noUiSlider/nouislider.js"></script>
+<!--cтилизация слайдера -->
+<script src="js/noUiSlider-script.js"></script>
+
+
+
+
+
 </body>
 
 </html>

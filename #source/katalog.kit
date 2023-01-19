@@ -2,7 +2,7 @@
 <html lang="ru">
 
 <head>
-   <title>Logo.KIT</title><!--имя файла-->
+   <title>Каталог-Logo.KIT</title><!--имя файла-->
    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
    <meta name="format-detection" content="telephone=no">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -218,54 +218,61 @@
          </ul>
       </div> 
    </nav>
-   <!--блок для адаптива перемещения-->
-   <div data-da=".page__content,992,last" class="page__content-side">
-   <!--колонка с новостями-->
-   <div class="page__news-side news-side">
-<a href="" class="news-side__title side-title">Новости</a>
-<div class="news-side__items">
-   <div class="news-side__item">
-      <a href="" class="news-side__label">Снижение цен на игровые площадки 
-         Jungle Gym</a>
-      <div class="news-side__body">
-         <div class="news-side__data"><span>12</span> авг</div>
-         <div class="news-side__text">Уважаемые покупатели! Мы рады сообщить вам о снижении 
-            цены с 27 июля на детский игровой комплекс</div>
+   <div class="filter">
+      <div class="filter__title">Фильтр товаров</div>
+      <!--чтобы на адаптиве скрыть-->
+      <div class="filter__body">
+         <div class="filter__section section-filter">
+            <div class="section-filter__title">Цена (руб.):</div>
+            <div class="section-filter__body">
+                  <!--сам слайдер-->
+               <div class="price-filter">
+<div class="price-filter__slider"></div>
+<div class="price-filter__values  values-price-filter">
+   <div class="values-price-filter__column">
+      <div class="values-price-filter__label">от</div>
+      <div class="values-price-filter__input">
+         <input id="price-start" class="input" autocomplete="off" name="form[]" type="text">
       </div>
    </div>
-   <div class="news-side__item">
-      <a href="" class="news-side__label">Поступление батутов Eclipse!</a>
-      <div class="news-side__body">
-         <div class="news-side__data"><span>19</span> авг</div>
-         <div class="news-side__text">Уважаемые покупатели! Мы рады сообщить вам о снижении 
-            цены с 27 июля на детский игровой комплекс</div>
-      </div>
-   </div>
-</div>
-   </div>
-   <div class="page__reviews-side reviews-side">
-      <a href="" class="reviews-side__title side-title">Отзывы</a>
-      <div class="reviews-side__items">
-         <a href="" class="reviews-side__item">
-            <div class="reviews-side__header">
-<div class="reviews-side__user">Павел Никифоров</div>
-<div class="reviews-side__data">12.09.2015</div>
-</div>
-<div class="reviews-side__body">Ради экономии места в тренажерном зале приобрел многофункциональный 
-   силовой тренажер Life Gear. За такую небольшую стоимость и с такими 
-   возможностями, он просто не заменим.</div>
-         </a>
-         <a href="" class="reviews-side__item">
-            <div class="reviews-side__header">
-<div class="reviews-side__user">Степан Николаевич</div>
-<div class="reviews-side__data">12.09.2015</div>
-</div>
-<div class="reviews-side__body">Спасибо за прекрасный совет, 
-   велосипед всей семье понравился и цену за него достойную запросили.</div>
-         </a>
+   <div class="values-price-filter__column">
+      <div class="values-price-filter__label">до</div>
+      <div class="values-price-filter__input">
+         <input id="price-end" class="input" autocomplete="off" name="form[]" type="text">
       </div>
    </div>
 </div>
+               </div>
+            </div>
+         </div>
+         <div class="filter__section section-filter">
+            <div class="section-filter__title">Товары для сравнения</div>
+            <div class="section-filter__body">
+               <div class="compare-filter">
+                  <div class="compare-filter__items">
+                     <div class="compare-filter__item">
+                        <a href="#" class="compare-filter__link">NordicTrack C100</a>
+                        <a href="#" class="compare-filter__remove"></a>
+                     </div>
+                     <div class="compare-filter__item">
+                        <a href="#" class="compare-filter__link">Clear Fit Luxury LT.20</a>
+                        <a href="#" class="compare-filter__remove"></a>
+                     </div>
+                     <div class="compare-filter__item">
+                        <a href="#" class="compare-filter__link">Ammity ATM 720 TFT+</a>
+                        <a href="#" class="compare-filter__remove"></a>
+                     </div>
+                  </div>
+                  <div class="compare-filter__footer">
+                     <div class="compare-filter__button"><span>Сравнить</span></div>
+                     <div class="compare-filter__clean"></div>
+                  </div>
+               </div>
+            </div>
+
+      </div>
+   </div>
+   </div>
 </aside>
 <div class="page__content">
    <form action="#" class="page__search search-page">
@@ -973,129 +980,6 @@
  </div>
 </div>
 </div>
-<div class="page__brands brands-slider">
-   <div class="brands-slider__container container">
-      <!--делаем слайдер-->
-      <div class="brands-slider__body swiper-container">
-          <!--делаем оболочку для слайдера-->
-         <div class="swiper-wrapper">
-             <!--сам слайд-->
-         <div class="brands-slider__slide swiper-slide">
-<img src="./img/brands01.png" alt="Бренд">
-         </div>
-         <div class="brands-slider__slide swiper-slide">
-            <img src="./img/brands01.png" alt="Бренд">
-                     </div>
-                     <div class="brands-slider__slide swiper-slide">
-                        <img src="./img/brands01.png" alt="Бренд">
-                                 </div>
-                                 <div class="brands-slider__slide swiper-slide">
-                                    <img src="./img/brands02.png" alt="Бренд">
-                                             </div>
-                                             <div class="brands-slider__slide swiper-slide">
-                                                <img src="./img/brands01.png" alt="Бренд">
-                                                         </div>
-                                                         <div class="brands-slider__slide swiper-slide">
-                                                            <img src="./img/brands02.png" alt="Бренд">
-                                                                     </div>
-                                                                     <div class="brands-slider__slide swiper-slide">
-                                                                        <img src="./img/brands01.png" alt="Бренд">
-                                                                                 </div>
-                                                                                 <div class="brands-slider__slide swiper-slide">
-                                                                                    <img src="./img/brands02.png" alt="Бренд">
-                                                                                             </div>
-                                                                                             <div class="brands-slider__slide swiper-slide">
-                                                                                                <img src="./img/brands01.png" alt="Бренд">
-                                                                                                         </div>
-                                                                                                         <div class="brands-slider__slide swiper-slide">
-                                                                                                            <img src="./img/brands01.png" alt="Бренд">
-                                                                                                                     </div>
-                                                                                                                     <div class="brands-slider__slide swiper-slide">
-                                                                                                                        <img src="./img/brands01.png" alt="Бренд">
-                                                                                                                                 </div>
-                                                                                                                                 <div class="brands-slider__slide swiper-slide">
-                                                                                                                                    <img src="./img/brands01.png" alt="Бренд">
-                                                                                                                                             </div>
-      </div>
-      </div>
-      <div class="brands-slider__arrows">
-         <div class="brands-slider__arrow brands-slider__arrow-prev _arrow _arrow-prev"></div>
-         <div class="brands-slider__arrow brands-slider__arrow-next _arrow _arrow-next"></div>
-      </div>
-   </div>
-</div>
-<section class="page__text text-block">
-   <div class="text-block__container container">
-      <div class="text-block__body">
-         <h1 class="text-block__title">О компании</h1>
-         <div class="text-block__row">
-            <div class="text-block__column">
-               <p>Компания «CLEAR FIT» была организована для создания и реализации 
-                  качественного и надежного спортивного оборудования для домашнего и легкого 
-                  коммерческого использования. Дефицит качественных тренажеров в среднем 
-                  ценовом сегменте повлек за собой не мотивированный рост цен на надежное 
-                  оборудование, создав дополнительный сегмент "полукоммерческих" тренажеров, 
-                  что приблизило их стоимость к профессиональному оборудованию. А заполнение 
-                  среднего ценового сегмента сложилось из роста количества брендов и 
-                  производителей недорогих тренажеров с невысокими техническими 
-                  характеристиками, за счет увеличения количества дополнительных опций.  
-                  Главными критериями для выпуска продукции с маркой «CLEAR FIT» являются: 
-                  высокое качество, разумная цена и комфорт тренировок. Осуществить эту 
-                  непростую задачу позволил тандем европейских разработок и размещение 
-                  основного производства на Тайване. Узкая специализация на кардио-тренажеры 
-                  для дома позволяет поддерживать высокий контроль качества на всех ступенях 
-                  производства.</p>
-               <p>Разумный показатель «цена/качество» среди предлагаемых разными компаниями 
-                  спортивных тренажеров в последние годы – довольно редкое явление. Мы 
-                  достаточно кропотливо потрудились над тренажерами CLEAR FIT, чтобы 
-                  продемонстрировать новый подход к выпуску доступной, красивой и  надежной 
-                  продукции. Современные технологии обеспечивают комфорт и легкость управления 
-                  тренажерами CLEAR FIT.Многочисленные отзывы от наших покупателей  поступили 
-                  и продолжают поступать feedbacks от конечных потребителей. И теперь мы с 
-                  гордостью можем заявить, что учли многие Ваши пожелания предложения в 
-                  обновленных версиях тренажеров CLEAR FIT. Мы рады представить Вам новое 
-                  поколение наших тренажеров. Теперь оборудование стало не только «умнее», 
-                  удобнее, комфортнее, но и сохранило прежние показатели цены, оставаясь 
-                  доступным спортивным оборудованием для тех, кто ценит качество.</p>
-            </div>
-            <div class="text-block__column">
-               <h2 class="text-block__label">Концепция CLEAR FIT строится на следующих тезисах:</h2>
-               <ul class="text-block__list">
-                  <li>Спортивное оборудование для дома не отличается по эффективности и 
-                     безопасности от профессионального оборудования - от пользователя не 
-                     требуется специальная подготовка и  первичные навыки, наличие 
-                     индивидуального профессионального тренера, соответственно требует более 
-                     тщательного контроля.</li>
-                  <li>Тренажеры CLEAR FIT просты в управлении, легко адаптируются под 
-                     индивидуальные особенности пользователя, эффективны и безопасны, 
-                     рассчитаны на самостоятельные тренировки. Основное требование к тренажерам под маркой «CLEAR FIT» высокое 
-                     качество по разумной стоимости - сохранить это равновесие основная задача 
-                     профессионалов из всех областей производства CLEAR FIT</li>
-                  <li>Мир не стоит на месте - каждое поколение оборудования соответствует 
-                     современным технологиям. Продукция CLEAR FIT производится с учетом 
-                     новейших разработок по современной технологии, совершенствуя и улучшая 
-                     популярные серии оборудования и создавая принципиально новые актуальные 
-                     модели.
-                  <p>Прежде всего оборудование CLEAR FIT ориентировано на конечного 
-                     пользователя - компания открыта для диалога, мы рады всем вашим отзывам 
-                     и замечаниям, это основной фактор создания комфортной и удобной 
-                     продукции.</p></li>
-                     <li>Качественный продукт не мыслим без качественного <br>
-                        сервисного обслуживания - официальный сервисный <br>
-                        центр CLEAR FIT обеспечивает техническую поддержку <br>
-                        в течение всего времени эксплуатации тренажера, <br>
-                        качественные услуги сервисного обслуживания <br>
-                        как в течение гарантийного срока, так и в <br>
-                        постгарантийный период.</li>
-               </ul>
-               <div class="text-block__image">
-                  <img src="./img/velo.png" alt="картинка">
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-</section>
 <div class="page__info-menu info-menu">
    <div class="info-menu__container container">
       <div class="info-menu__body">
